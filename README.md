@@ -2,15 +2,15 @@
 A service in Python Flask for the generation of WoT AsyncAPI service descriptions for specific IoT devices (e.g. sensors, actuators) that work asynchronously (i.e. not synchronously, not REST-based).
 
 # Instructions
-Without Docker:
-    - Enable Vertual Env:
-        - `API\v1\.venv\Scripts\activate`
+Without Docker:  
+    - Enable Vertual Env:  
+        - `API\v1\.venv\Scripts\activate` 
 
-    - Run flask application:
-        - `cd \API`
-        - `python -m flask --app v1 run --debug`
+    - Run flask application:  
+        - `cd \API`  
+        - `python -m flask --app v1 run --debug`  
 
-With Docker:
-    - Build & run from Dockerfile in the project root directory (Docker should be already running in your machine):
-        - `docker build -t flask_app .`
-        - `docker run -p 5000:5000 flask_app`
+With Docker:  
+    - Build & run from Dockerfile in the project root directory (Docker should be already running in your machine):  
+        - `docker build -t flask_app .`  
+        - `docker run -p 5000:5000 flask_app`  
