@@ -11,4 +11,7 @@ Without Docker:
         python -m flask --app v1 run --debug
 
 With Docker:
-    Build and run from dockerfile
+    Build and run from Dockerfile (Docker should be already running in your machine):
+        Go to project root directory
+        docker build -t flask_app .
+        docker run -p 5000:5000 flask_app
