@@ -1,0 +1,42 @@
+{
+    "asyncapi": "3.0.0",
+    "info": {
+        
+    },
+    "id":"",
+    "channels": {
+        "webthing_resource_channel":{
+
+        },
+        "properties_resource_channel":{
+
+        },
+        "actions_resource_channel":{
+            
+        }
+    },
+    "operations":{
+        "webthing_resource_operation":{
+
+        },
+        "properties_resource_operation":{
+
+        },
+        "actions_resource_operation":{
+            
+        }
+    },
+    "components":{
+        "tags":{
+            "webthing_resource_tag":{
+
+            },
+            "properties_resource_tag":{
+
+            },
+            "actions_resource_tag":{
+                
+            }
+        }
+    }
+}
