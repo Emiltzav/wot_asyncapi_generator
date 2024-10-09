@@ -4,14 +4,13 @@ A service in Python Flask for the generation of WoT AsyncAPI service description
 # Instructions
 Without Docker:
     - Enable Vertual Env:
-        - API\v1\.venv\Scripts\activate
+        - `API\v1\.venv\Scripts\activate`
 
     - Run flask application:
-        - cd \API
-        - python -m flask --app v1 run --debug
+        - `cd \API`
+        - `python -m flask --app v1 run --debug`
 
 With Docker:
-    - Build and run from Dockerfile (Docker should be already running in your machine):
-        - Go to project root directory
-        - docker build -t flask_app .
-        - docker run -p 5000:5000 flask_app
+    - Build & run from Dockerfile in the project root directory (Docker should be already running in your machine):
+        - `docker build -t flask_app .`
+        - `docker run -p 5000:5000 flask_app`
