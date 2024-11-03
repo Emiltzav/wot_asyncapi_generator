@@ -27,8 +27,9 @@ services:
     links:
       - 'db:db'
     ports:
+      - 8002:80
 
-  
+
 volumes:
   mysql-data:
   mongodb:
