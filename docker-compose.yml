@@ -5,7 +5,9 @@ services:
     build: ./docker
     image: apache_server
     ports:
-      - '8080:80'
+      - '80:80'
+    expose:
+      - "80"
     volumes:
       - ./:/var/www
 
