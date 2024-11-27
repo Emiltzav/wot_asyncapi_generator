@@ -1,0 +1,30 @@
+{
+  "_id": "...",
+  "dateInserted": "2024-11-16T12:00:00Z",
+  "dateUpdated": "2024-11-16T15:00:00Z",
+  "keywords": ["actuators", "smart lights", "asynchronous APIs", "AsyncAPI", "IoT"],
+  "device": {
+    "deviceId": "3452",
+    "deviceName": "MyHomeSmartLight-Chania-3452",
+    "deviceCategory": "smart lights",
+    "deviceLocation": "Living Room, Smart Home, Eleftheriou Venizelou Street, Chania, Crete, Greece",
+    "deviceSerialNumber": "ABC123456789",
+    "deviceModel": "SL-1000",
+    "deviceManufacturer": "XYZ Corp.",
+    "deviceProperties": ["lighting"],
+    "deviceActions": ["turn on, turn off"],
+    "deviceSubscriptions": "yes"
+  },
+  "api": {
+    "apiSpecificationType": "AsyncAPI",
+    "apiTitle": "Smart Light API",
+    "apiDescription": "An asynchronous API for controlling smart lights",
+    "apiProtocol": "MQTT"
+  },
+  "owner": {
+    "ownerId": "1552",
+    "ownerName": "Aimilios T.",
+    "ownerCategory": "device owner / developer",
+    "ownerRole": "admin"
+  }
+}

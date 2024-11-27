@@ -3,7 +3,7 @@
   "info": {
     "title": "DHT22 Temperature and Humidity Sensor MQTT API",
     "version": "1.0.0",
-    "description": "The DHT22 Sensor API allows you to remotely receive temeprature and humidity measurements of the sensor.\n### Check out its awesome features:\n* Receive real-time temperature and humidity measurements 📈"
+    "description": "The DHT22 Sensor API allows you to remotely receive temperature and humidity measurements of the sensor.\n### Check out its awesome features:\n* Receive real-time temperature and humidity measurements 📈"
   },
   "defaultContentType": "application/json",
   "servers": {

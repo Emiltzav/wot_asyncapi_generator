@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+
+  app:
+    build: ./docker
+    image: apache_server
+    ports:
+      - '80:80'
+    expose:
+      - "80"
+    volumes:
+      - ./:/var/www
+
+  db:
+    image: mysql:8
+    ports:
+      - '3308:3306' 
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql-config.cnf:/etc/mysql/conf.d/config.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: web_of_things
+      MYSQL_USER: wot_user
+      MYSQL_PASSWORD: web_of_things_mysql_db@
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - 'db:db'
+    ports:
+      - 8002:80
+
+
+volumes:
+  mysql-data:
+  mongodb:

@@ -1030,8 +1030,9 @@ $thing_description = "<pre>" . json_encode($asyncapiData, JSON_PRETTY_PRINT) . "
         "@context": "https://schema.org",
         "@type": "Thing",
         "name": "Web of Things - DHT22 Temperature Sensor - MQTT API",
-        "description": "A sensor that measures temperature and humidity. Aimilios Tzavaras. Described by AsyncAPI TD. Technical University of Crete.",
-        "property": [
+        "description": "The API of a sensor that measures temperature and humidity, described by AsyncAPI TD. Aimilios Tzavaras. Technical University of Crete.",
+        "keywords": "sensor, WoT, temperature",
+		"property": [
             {
                 "@type": "PropertyValue",
                 "name": "Temperature",

@@ -13,4 +13,7 @@ Without Docker:
 With Docker:  
     - Build & run from Dockerfile in the project root directory (Docker should be already running in your machine):  
         - `docker build -t flask_app .`  
-        - `docker run -p 5000:5000 flask_app`  
+        - `docker run -p 5000:5000 flask_app`
+
+# Notes for Web Server (PHP) Service
+You have to enter the PHP container (app) docker container (e.g. using Docker Desktop) and run `composer install` in the terminal (after navigating in the /docker folder!!) in order to install the dependencies and generate vendor/autoload.php inside the /docker folder.

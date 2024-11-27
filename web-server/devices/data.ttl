@@ -1,0 +1,18 @@
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+  a schema:Thing ;
+  schema:description "The API of a sensor that measures temperature and humidity, described by AsyncAPI TD. Aimilios Tzavaras. Technical University of Crete."^^xsd:string ;
+  schema:name "Web of Things - DHT22 Temperature Sensor - MQTT API"^^xsd:string ;
+  schema:property [
+    a schema:PropertyValue ;
+    schema:name "Temperature"^^xsd:string ;
+    schema:unitCode "CEL"^^xsd:string ;
+    schema:value "23.5"^^xsd:string
+  ], [
+    a schema:PropertyValue ;
+    schema:name "Humidity"^^xsd:string ;
+    schema:unitCode "PERCENT"^^xsd:string ;
+    schema:value "60"^^xsd:string
+  ] .

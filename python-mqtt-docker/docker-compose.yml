@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  hivemq:
+    image: hivemq/hivemq4
+    container_name: hivemq
+    ports:
+      - "1883:1883" # MQTT port
+      - "8080:8080" # Admin UI (optional)
+    volumes:
+      - hivemq-data:/opt/hivemq/data # Persistent storage for HiveMQ
+
+  mqtt-python:
+    build: .
+    container_name: mqtt-python
+    depends_on:
+      - hivemq
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: ["tail", "-f", "/dev/null"] # Keeps the container running
+
+volumes:
+  hivemq-data:

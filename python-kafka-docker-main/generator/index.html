@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IoT Device Kafka API Code Generator</h1>
+        
+        <!-- Form to input Kafka topic and message structure -->
+        <form id="codeGenerationForm">
+            <div class="form-group">
+                <label for="topicName">Kafka Topic Name</label>
+                <input type="text" id="topicName" name="topicName" required placeholder="Enter Kafka Topic Name">
+            </div>
+
+            <div class="form-group">
+                <label for="messageFields">Message Fields (JSON)</label>
+                <textarea id="messageFields" name="messageFields" rows="6" placeholder='{"smartLightID": "int", "command": "str", "sentAt": "str"}' required></textarea>
+                <small>Define the message fields as a JSON object with field names and data types.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="operation">Select Operation</label>
+                <select id="operation" name="operation">
+                    <option value="command">Command</option>
+                    <option value="status">Status</option>
+                    <option value="measurement">Measurement</option>
+                </select>
+            </div>
+
+            <button type="submit" id="generateButton">Generate Code</button>
+        </form>
+        
+        <!-- Section to display the generated code -->
+        <div id="generatedCodeSection" style="display:none;">
+            <h2>Generated Code:</h2>
+            <pre id="generatedCode"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+1. Search Thing Descriptions based on the API title 
+
+{
+  "info.title": {
+    "$regex": "(Temperature|Sensor)",
+    "$options": "i"
+  }
+}
+
+2. Search Thing Descriptions based on the API protocol 
+
+{
+  "servers.mqttBroker.protocol": "mqtt"
+}
+
+3. Search Thing Descriptions based on the API description 
+
+{
+  "info.description": {
+    "$regex": "DHT22",
+    "$options": "i"
+  }
+}
+
+4. Search only for Thing Descriptions of asynchronous Things (i.e. described by AsyncAPI) 
+
+{ 
+    "asyncapi": { 
+        "$exists": true 
+    } 
+}
+
+5. Search only for Thing Descriptions of synchronous Things (i.e. described by OpenAPI) 
+
+{ 
+    "openapi": { 
+        "$exists": true 
+    } 
+}
+
+6. Search Thing Descriptions based on the Thing properties/actions included in the API description 
+
+{
+  "info.description": {
+    "$regex": "(?=.*temperature)(?=.*humidity)",
+    "$options": "i"
+  }
+}
