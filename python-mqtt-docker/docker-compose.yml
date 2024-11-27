@@ -5,8 +5,15 @@ services:
     image: hivemq/hivemq4
     container_name: hivemq
     ports:
-      - "1883:1883" # MQTT port
-      - "8080:8080" # Admin UI (optional)
+      - "1883:1883"   # MQTT (non-secure)
+      - "8883:8883"   # MQTT over SSL/TLS (secure)
+      - "8000:8000"   # WebSocket
+      - "8001:8001"   # WebSocket over SSL/TLS (secure)
+      - "8080:8080"   # Admin UI (optional)
+    environment:
+      - Hivemq__Listener__Default__Port=1883
+      - Hivemq__Listener__WebSocket__Port=8000  # WebSocket Port
+      - Hivemq__Listener__WebSocket__Enabled=true
     volumes:
       - hivemq-data:/opt/hivemq/data # Persistent storage for HiveMQ
 

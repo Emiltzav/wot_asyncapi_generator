@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Measurement Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+    <h1>MQTT Measurement Form</h1>
+    <form id="measurement-form">
+        <label for="device-id">Device ID:</label>
+        <input type="text" id="device-id" name="device-id" value="device-12345" required><br><br>
+
+        <label for="temperature">Temperature (°C):</label>
+        <input type="number" id="temperature" name="temperature" value="22.5" step="0.1" required><br><br>
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="number" id="humidity" name="humidity" value="55" step="1" required><br><br>
+
+        <label for="timestamp">Timestamp:</label>
+        <input type="datetime-local" id="timestamp" name="timestamp" value="2024-11-27T12:30" required><br><br>
+
+        <button type="submit">Send Data</button>
+    </form>
+
+    <script>
+        // MQTT Configuration for Browser using WebSocket
+        const mqttBrokerUrl = 'ws://165.22.91.88:8000'; // Change to 'wss://' if using a secure connection
+        const topic = 'sensors/measurements'; // Topic for publishing data
+
+        // Connect to the MQTT broker using the WebSocket protocol
+        const client = mqtt.connect(mqttBrokerUrl, {
+            protocol: 'ws' // Make sure to use WebSocket
+        });
+
+        // Wait for the client to connect
+        client.on('connect', function () {
+            console.log('Connected to MQTT broker');
+        });
+
+        // Handle form submission
+        document.getElementById('measurement-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the form data
+            const deviceId = document.getElementById('device-id').value;
+            const temperature = document.getElementById('temperature').value;
+            const humidity = document.getElementById('humidity').value;
+            const timestamp = document.getElementById('timestamp').value;
+
+            // Create a payload for the MQTT message
+            const payload = JSON.stringify({
+                deviceId: deviceId,
+                temperature: parseFloat(temperature),
+                humidity: parseFloat(humidity),
+                timestamp: timestamp
+            });
+
+            // Publish the data to the MQTT broker
+            client.publish(topic, payload, function () {
+                console.log('Data sent: ', payload);
+                alert('Data sent successfully!');
+            });
+        });
+    </script>
+</body>
+</html>
