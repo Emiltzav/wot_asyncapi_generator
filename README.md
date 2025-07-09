@@ -1,3 +1,5 @@
+This Web of Things (WoT) toolset and system architecture implementation was developed — and is actively being extended — as part of the PhD research of Aimilios Tzavaras and the postgraduate thesis of Manousos Boliotis, under the supervision of Professor Euripides Petrakis and Lab Instructor Chrysi Tsinaraki, at the Intelligent Systems Laboratory of the Technical University of Crete.
+
 # wot_asyncapi_generator
 A service in Python Flask for the generation of WoT AsyncAPI service descriptions for specific IoT devices (e.g. sensors, actuators) that work asynchronously (i.e. not synchronously, not REST-based).
 
